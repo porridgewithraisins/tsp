@@ -1,0 +1,4 @@
+#! /usr/bin/env sh
+
+printf "$(tput smul)%8s$(tput sgr0)\n\n" "$1"
+echo "$1" | ./TSP_Validator | grep -A1 valid | grep -v valid | grep -v '\--' | xargs printf "%8.3f\n"
